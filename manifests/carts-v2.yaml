@@ -10,7 +10,7 @@ spec:
     metadata:
       labels:
         app: carts
-        version: v2
+        version: v1
     spec:
       containers:
       - name: carts
