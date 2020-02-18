@@ -21,7 +21,7 @@ spec:
         - name: DT_TAGS
           value: "product=sockshop"
         - name: DT_CUSTOM_PROP
-          value: "SERVICE_TYPE=BACKEND"
+          value: "keptn_project=sockshop keptn_service=carts keptn_stage=preprod keptn_deployment"
         resources:
           limits:
             cpu: 500m
