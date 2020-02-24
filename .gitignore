@@ -1,2 +1,3 @@
 creds.json
 keptn-creds.json
+scripts/expose-bridge/manifests/gen/bridge.yaml
