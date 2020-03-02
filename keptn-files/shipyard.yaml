@@ -1,2 +1,2 @@
 stages:
-    - name: "preprod"
+  - name: "preprod"
