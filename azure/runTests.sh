@@ -5,7 +5,7 @@ starttime=$(date +%FT%T+00:00)
 echo "##vso[task.setvariable variable=starttime;isOutput=true;]$starttime"
 
 cartsUrl=$(SERVICE_URL)
-numofreqs=500
+numofreqs=$(NUM_OF_REQUESTS)
 echo "Hit the service with $numofreqs requests"
 curl --silent --output /dev/null "$cartsUrl/carts/[1-$numofreqs]/items"
 
