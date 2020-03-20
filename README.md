@@ -246,13 +246,31 @@ https://aex.dev.azure.com/
 
     ![add bash scripts](./images/az-create-bash-job.png)
 
-1. Add tests
+1. You will find a simple test script that send a given number of HTTP requests to a given service endpoint. The endpoint as well as the number of requests have to be configured in the **Variables** section, which we will set up just in a moment.
 
     ![add tests](./images/az-add-tests.png)
 
-1. Add Keptn Quality Gate
+1. Now we are going to set up the Keptn Quality Gate. Once triggered it will automatically reach out to the SLI provider (in our example this is Dynatrace) and will fetch all metrics defined in the SLO file. If there are objectives defined, the Keptn quality gate will evaluate the metrics and generate a score for each individual metric, as well as total score for the whole quality gate. 
 
     ![add quality gate](./images/az-add-quality-gate.png)
+
+    Let us take a look how the quality gate is implemented:
+
+    ```bash
+    todo
+    ```
+
+1. Let us now set the variables for the tests & evaluation of the quality gates. We will need the following variables:
+
+    - KEPTN_API_TOKEN
+    - KEPTN_ENDPOINT
+    - KEPTN_PROJECT
+    - KEPTN_SERVICE
+    - KEPTN_STAGE
+    - SERVICE_URL
+    - NUM_OF_REQUESTS
+
+    ![variables](./images/az-variables.png)
 
 1. Promote or decline promotion of artifact
 
@@ -267,4 +285,4 @@ After the deployment, the second stage will start the tests followed by the eval
 
 # Summary
 
-
+TODO
