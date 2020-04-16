@@ -7,7 +7,7 @@ echo 'end' $(endtime)
 
 echo 'Start Keptn quality gate'
 
-json=$(curl -X POST "$KEPTN_ENDPOINT/v1/event" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" -H "Content-Type: application/json" -d "{ \"data\": { \"end\": \"$(endtime)\", \"project\": \"$KEPTN_PROJECT\", \"service\": \"$KEPTN_SERVICE\", \"stage\": \"$KEPTN_STAGE\", \"start\": \"$(starttime)\", \"teststrategy\": \"manual\" }, \"type\": \"sh.keptn.event.start-evaluation\"}" --insecure)
+json=$(curl -X POST "$KEPTN_ENDPOINT/v1/event" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" -H "Content-Type: application/json" -d "{ \"data\": { \"end\": \"$(endtime)\", \"project\": \"$KEPTN_PROJECT\", \"service\": \"$KEPTN_SERVICE\", \"stage\": \"$KEPTN_STAGE\", \"start\": \"$(starttime)\", \"teststrategy\": \"manual\" }, \"type\": \"sh.keptn.event.start-evaluation\", \"source\": \"devops-integration\"}" --insecure)
 context=$(echo $json | jq -r '.keptnContext')
 
 
