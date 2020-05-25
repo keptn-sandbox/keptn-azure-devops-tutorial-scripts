@@ -1,4 +1,4 @@
-# Write your commands here
+#!/bin/bash
 
 echo 'Evaluate tests'
 
@@ -11,10 +11,7 @@ json=$(curl -X POST "$KEPTN_ENDPOINT/v1/event" -H "accept: application/json" -H 
 context=$(echo $json | jq -r '.keptnContext')
 
 
-
-
 echo $context
-
 
 # evaluate quality gate
 result=$(curl -X GET "$KEPTN_ENDPOINT/v1/event?keptnContext=$context&type=sh.keptn.events.evaluation-done" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" --insecure)
@@ -27,7 +24,6 @@ do
   result=$(curl -X GET "$KEPTN_ENDPOINT/v1/event?keptnContext=$context&type=sh.keptn.events.evaluation-done" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" --insecure)
   httpcode=$(echo $result | jq -r '.code')
 done
-
 
 
 echo $result
