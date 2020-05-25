@@ -38,6 +38,8 @@ then
       sed 's~DYNATRACE_API_TOKEN~'"$DTAPI"'~' >> $CREDS
 fi
 
+kubectl -n keptn create secret generic dynatrace --from-literal="DT_TENANT=$DTENV" --from-literal="DT_API_TOKEN=$DTAPI"  
+
 cat $CREDS
 echo ""
 echo "The credentials file can be found here:" $CREDS
