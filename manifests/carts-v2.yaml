@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: carts
-        image: keptnexamples/carts:0.10.2
+        image: keptnexamples/carts:0.11.2
         env:
         - name: JAVA_OPTS
           value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
