@@ -1,7 +1,0 @@
----
-# name for production stage - at a specific point in time, the artefacts in staging will be
-# marked for production and the deployed to the production namespace
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: preprod
