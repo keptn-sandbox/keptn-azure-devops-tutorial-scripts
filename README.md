@@ -6,6 +6,9 @@ In this tutorial, I'm going to describe a way how to integrate Keptn Quality Gat
 
 I am curiuos to see what you are building with Azure Devops and Keptn or which you cases you would like to have covered - ping me on [@jetzlstorfer](https://twitter.com/jetzlstorfer) and let me know! 
 
+**PLEASE NOTE:** The tutorial itself has moved to https://tutorials.keptn.sh - this means that you can and should follow the instructions from there! The files needed are still in this repo, but the instructions itself are up-to-date at https://tutorials.keptn.sh 
+
+
 **What we will cover in this tutorial**
 
 1. Install Keptn for quality gates only use case on Azure Kubernetes Service (AKS)
