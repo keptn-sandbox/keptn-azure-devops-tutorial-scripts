@@ -2,7 +2,7 @@
 
 echo 'Evaluate tests'
 
-echo 'start ' $starttime $STARTTIME
+echo 'start ' $starttime $STARTTIME $(starttime)
 echo 'end' $(endtime)
 
 echo 'Start Keptn quality gate'
