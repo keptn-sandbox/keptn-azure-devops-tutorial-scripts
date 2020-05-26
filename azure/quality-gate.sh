@@ -7,6 +7,9 @@ echo 'start ' $STARTTIME
 echo 'start' $(starttime)
 echo 'start' $(testrun.starttime)
 echo 'start' $testrun.starttime
+echo 'start' $TESTRUN_STARTTIME
+echo 'start' $TESTRUN_1
+echo 'start' $1
 echo 'end' $(endtime)
 
 echo 'Start Keptn quality gate'
