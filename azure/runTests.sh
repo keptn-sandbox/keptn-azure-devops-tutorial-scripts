@@ -3,7 +3,6 @@
 echo 'Save start time'
 starttime=$(date +%FT%T+00:00)
 echo "##vso[task.setvariable variable=starttime;isOutput=true;]$starttime"
-echo $STARTTIME
 echo $starttime
 
 cartsUrl=$SERVICE_URL
