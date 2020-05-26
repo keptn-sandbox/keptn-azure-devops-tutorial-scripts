@@ -5,6 +5,7 @@ echo 'Evaluate tests'
 echo 'start ' $starttime  
 echo 'start ' $STARTTIME
 echo 'start' $(starttime)
+echo 'start' $(testrun.startime)
 echo 'end' $(endtime)
 
 echo 'Start Keptn quality gate'
