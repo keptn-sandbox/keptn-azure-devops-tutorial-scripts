@@ -2,7 +2,7 @@
 
 echo 'Save start time'
 starttime=$(date +%FT%T+00:00)
-##vso[task.setvariable variable=starttime;isOutput=true;]$starttime
+echo "##vso[task.setvariable variable=starttime;isOutput=true;]$starttime"
 
 cartsUrl=$SERVICE_URL
 numofreqs=$NUM_OF_REQUESTS
@@ -12,4 +12,4 @@ curl --silent --output /dev/null "$cartsUrl/carts/[1-$numofreqs]/items"
 echo 'Tests finished'
 echo 'Save end time'
 endtime=$(date +%FT%T+00:00)
-##vso[task.setvariable variable=endtime;isOutput=true;]$endtime
+echo "##vso[task.setvariable variable=endtime;isOutput=true;]$endtime"
