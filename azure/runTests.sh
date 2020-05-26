@@ -12,4 +12,4 @@ curl --silent --output /dev/null "$cartsUrl/carts/[1-$numofreqs]/items"
 echo 'Tests finished'
 echo 'Save end time'
 endtime=$(date +%FT%T+00:00)
-echo "##vso[task.setvariable variable=endtime]$endtime"
+echo "##vso[task.setvariable variable=endtime;isOutput=true;]$endtime"
