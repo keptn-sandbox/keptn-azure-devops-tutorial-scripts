@@ -38,6 +38,10 @@ echo $result
 ### ECHO THE RESULT
 decision=$(echo $result | jq -r '.data.evaluationdetails.result')
 echo $decision
+if [ "$decision" == 'fail' ]; then
+  echo "evaluation not successful"
+  exit 1;
+fi
 
-echo 'Evaluation done'
+echo 'Evaluation done successful'
 
