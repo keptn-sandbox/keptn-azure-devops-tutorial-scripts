@@ -2,13 +2,19 @@
 
 echo 'Evaluate tests'
 
-echo 'start ' $(starttime)
-echo 'end' $(endtime)
+
+echo 'starttime of tests' $TESTRUN_STARTTIME
+echo 'endtime of tests' $TESTRUN_ENDTIME
 
 echo 'Start Keptn quality gate'
+echo 'calling out to ' $KEPTN_ENDPOINT
+
+echo $KEPTN_PROJECT
+echo $KEPTN_SERVICE
+echo $KEPTN_STAGE
 
 ### START THE EVALUTION
-json=$(curl -X POST "$KEPTN_ENDPOINT/v1/event" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" -H "Content-Type: application/json" -d "{ \"data\": { \"end\": \"$(endtime)\", \"project\": \"$KEPTN_PROJECT\", \"service\": \"$KEPTN_SERVICE\", \"stage\": \"$KEPTN_STAGE\", \"start\": \"$(starttime)\", \"teststrategy\": \"manual\" }, \"type\": \"sh.keptn.event.start-evaluation\", \"source\": \"devops-integration\"}" --insecure)
+json=$(curl -X POST "$KEPTN_ENDPOINT/v1/event" -H "accept: application/json" -H "x-token: $KEPTN_API_TOKEN" -H "Content-Type: application/json" -d "{ \"data\": { \"end\": \"$TESTRUN_ENDTIME\", \"project\": \"$KEPTN_PROJECT\", \"service\": \"$KEPTN_SERVICE\", \"stage\": \"$KEPTN_STAGE\", \"start\": \"$TESTRUN_STARTTIME\", \"teststrategy\": \"manual\" }, \"type\": \"sh.keptn.event.start-evaluation\", \"source\": \"devops-integration\"}" --insecure)
 context=$(echo $json | jq -r '.keptnContext')
 
 
@@ -32,6 +38,10 @@ echo $result
 ### ECHO THE RESULT
 decision=$(echo $result | jq -r '.data.evaluationdetails.result')
 echo $decision
+if [ "$decision" == 'fail' ]; then
+  echo "evaluation not successful"
+  exit 1;
+fi
 
-echo 'Evaluation done'
+echo 'Evaluation done successful'
 
