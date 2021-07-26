@@ -1,5 +1,7 @@
 # Azure DevOps Pipelines with Keptn Quality Gates
 
+**ATTENTION: This Tutorial works with Keptn 0.7.x. It hasn't yet been updated for Keptn 0.8.x where eventing has changed. For the latest Azure DevOps Integrations please have a look at the [Azure DevOps Extension](https://github.com/keptn-sandbox/keptn-azure-devops-extension)**
+
 ![keptn on azure devops](./images/keptn-azure-devops.png)
 
 In this tutorial, I'm going to describe a way how to integrate Keptn Quality Gates in your Azure DevOps release pipelines. As there might be multiple ways how to do this, I will show you one that works easy and straight-forward to help you get started.
